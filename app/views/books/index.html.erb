@@ -1,0 +1,31 @@
+<h1>Books</h1>
+<% flash.each do |type, message| %>
+    <div class="<%= type %>">
+      <%= message %>
+    </div>
+  <% end %>
+  
+<%= link_to 'Add New Book', new_book_path %>
+
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Actions</th>
+  </tr>
+
+  
+  <%= yield %>
+
+  <% @books.each do |book| %>
+    <tr>
+      <td><%= book.title %></td>
+      <td>
+        <%= link_to 'Show', book_path(book) %> |
+        <%= link_to 'Edit', edit_book_path(book) %> |
+        <%= link_to 'Delete', delete_book_path(book) %>
+
+      </td>
+    </tr>
+  <% end %>
+</table>
