@@ -13,9 +13,6 @@ Rails.application.routes.draw do
   get 'books/:id/delete', to: 'books#delete', as: :delete_book
 
   resources :books
-  
-  # ... other routes ...
-
 
   # Defines the root path route ("/")
   # root "posts#index"
